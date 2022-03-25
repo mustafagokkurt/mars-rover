@@ -7,89 +7,60 @@ using System.Threading.Tasks;
 namespace Mars_rover
 {
     public class MarsRover
-    {
-        List<string> yonler = new List<string> { "W", "N", "E", "S" };
-
-        public class Konum
-        {
-            public int X;
-            public int Y;
-            public string Yon;
-
-            public override string ToString()
-            {
-                return $"{X} {Y} {Yon}";
-            }
-        }
-
+    {        
         public void Baslat()
         {
             Console.WriteLine("Mars Projesi");
 
             for (; ; )
             {
-                Console.WriteLine("Mevcut Konum ve Yönü belirtiniz?");
-                string input = Console.ReadLine();
+                Console.WriteLine("Input: ");
+                string input0 = Console.ReadLine();                
+                string konumBilgisi1 = Console.ReadLine();
+                string arac1Komut = Console.ReadLine();
+                string konumBilgisi2 = Console.ReadLine();
+                string arac2Komut = Console.ReadLine();
 
-                Konum konum = new Konum
+                #region arac adi ve konum bilgileri, duzlem boyutlari kaydediliyor
+                DuzlemBoyutlari duzlemBoyutlari = new DuzlemBoyutlari
                 {
-                    X = int.Parse(input.Split(' ')[0]),
-                    Y = int.Parse(input.Split(' ')[1]),
-                    Yon = input.Split(' ')[2]
+                    X = int.Parse(input0.Split(' ')[0]),
+                    Y = int.Parse(input0.Split(' ')[1]),
                 };
-
-                Console.WriteLine("Yönlendirme bilgisi giriniz?");
-                string input2 = Console.ReadLine();
-                char[] ch = input2.ToCharArray();
-                foreach (var c in ch)
+                Arac Arac1 = new Arac
                 {
-                    if (c == 'M')
+                    Konum = new Konum
                     {
-                        konum = HareketEttir(konum, 1);
-                    }
-                    else if (c == 'L' || c == 'R')
+                        X = int.Parse(konumBilgisi1.Split(' ')[0]),
+                        Y = int.Parse(konumBilgisi1.Split(' ')[1]),
+                        Yon = konumBilgisi1.Split(' ')[2]
+                    },
+                    Name = "Rover-1"
+                };
+                Arac Arac2 = new Arac
+                {
+                    Konum = new Konum
                     {
-                        konum.Yon = YonBul(konum, c.ToString());
-                    }
-                }
+                        X = int.Parse(konumBilgisi2.Split(' ')[0]),
+                        Y = int.Parse(konumBilgisi2.Split(' ')[1]),
+                        Yon = konumBilgisi2.Split(' ')[2]
+                    },
+                    Name = "Rover-2"
+                };
+                #endregion
 
-                System.Console.WriteLine(konum.ToString());
+                KomutaKontrol.AracEkle(Arac1);
+                KomutaKontrol.AracEkle(Arac2);
+                KomutaKontrol komutaKontrolArac1 = new KomutaKontrol(Arac1, duzlemBoyutlari);
+                KomutaKontrol komutaKontrolArac2 = new KomutaKontrol(Arac2, duzlemBoyutlari);
+
+                komutaKontrolArac1.KomutlariUygula(arac1Komut);
+                komutaKontrolArac2.KomutlariUygula(arac2Komut);
+                
+                Console.WriteLine("Output: ");
+                System.Console.WriteLine(Arac1.Konum.ToString());
+                System.Console.WriteLine(Arac2.Konum.ToString());
             }
-
-            
-        }
-
-        public string YonBul(Konum konum, string sagsol)
-        {
-            if (sagsol == "R")
-            {
-                return yonler[Math.Abs((yonler.IndexOf(konum.Yon) + 1 + 4) % 4)];
-            }
-            else
-            {
-                return yonler[Math.Abs((yonler.IndexOf(konum.Yon) - 1 + 4) % 4)];
-            }
-        }
-
-        Konum HareketEttir(Konum konum, int hareketSayisi)
-        {
-            switch (konum.Yon)
-            {
-                case "W":
-                    konum.X = konum.X - hareketSayisi;
-                    break;
-                case "S":
-                    konum.Y = konum.Y - hareketSayisi;
-                    break;
-                case "E":
-                    konum.X = konum.X + hareketSayisi;
-                    break;
-                case "N":
-                    konum.Y = konum.Y + hareketSayisi;
-                    break;
-            }
-
-            return konum;
-        }
+        }        
     }
 }
