@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 namespace Mars_rover
 {
     class Program
-    {
-       
-
+    {       
         static void Main(string[] args)
         {
             MarsRover marsRover = new MarsRover();
             marsRover.Baslat();
-
-        }
-
-        
+        }        
     }
 }

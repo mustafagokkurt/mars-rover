@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mars-rover\Mars-rover.csproj" />
-    <ProjectReference Include="..\TestExample\TestExample.csproj" />
   </ItemGroup>
 
 </Project>

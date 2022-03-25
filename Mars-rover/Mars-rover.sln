@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mars-rover.Test", "Mars-rover.Test\Mars-rover.Test.csproj", "{5FF34912-0340-46DF-8EBD-7AAAAC3F71DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestExample", "TestExample\TestExample.csproj", "{12B29BC8-88A1-4939-89B1-9711E740FCD5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mars-rover", "Mars-rover\Mars-rover.csproj", "{6F17327D-83EC-4F41-A54D-73D74D3088DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mars-rover", "Mars-rover\Mars-rover.csproj", "{6F17327D-83EC-4F41-A54D-73D74D3088DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{5FF34912-0340-46DF-8EBD-7AAAAC3F71DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FF34912-0340-46DF-8EBD-7AAAAC3F71DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FF34912-0340-46DF-8EBD-7AAAAC3F71DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12B29BC8-88A1-4939-89B1-9711E740FCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12B29BC8-88A1-4939-89B1-9711E740FCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12B29BC8-88A1-4939-89B1-9711E740FCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12B29BC8-88A1-4939-89B1-9711E740FCD5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F17327D-83EC-4F41-A54D-73D74D3088DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F17327D-83EC-4F41-A54D-73D74D3088DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F17327D-83EC-4F41-A54D-73D74D3088DF}.Release|Any CPU.ActiveCfg = Release|Any CPU

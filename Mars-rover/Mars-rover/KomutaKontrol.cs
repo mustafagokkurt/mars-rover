@@ -7,12 +7,19 @@ namespace Mars_rover
 {
     public class KomutaKontrol
     {
-        static List<Arac> araclar = new List<Arac>();
+        List<string> yonler = new List<string> { "W", "N", "E", "S" };
+
+        static List<Arac> araclar;
         Arac komutaEdileceArac;
         DuzlemBoyutlari duzlemBoyutlari;
 
         public static void AracEkle(Arac arac)
         {
+            if (araclar == null)
+            {
+                araclar = new List<Arac>();
+            }
+
             araclar.Add(arac);
         }
 
@@ -20,9 +27,7 @@ namespace Mars_rover
         {
             komutaEdileceArac = arac;
             this.duzlemBoyutlari = duzlemBoyutlari;
-        }
-
-        List<string> yonler = new List<string> { "W", "N", "E", "S" };
+        }        
 
         public void KomutlariUygula(string komutlar)
         {

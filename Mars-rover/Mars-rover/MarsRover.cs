@@ -14,12 +14,14 @@ namespace Mars_rover
 
             for (; ; )
             {
+                #region input
                 Console.WriteLine("Input: ");
                 string input0 = Console.ReadLine();                
                 string konumBilgisi1 = Console.ReadLine();
                 string arac1Komut = Console.ReadLine();
                 string konumBilgisi2 = Console.ReadLine();
                 string arac2Komut = Console.ReadLine();
+                #endregion
 
                 #region arac adi ve konum bilgileri, duzlem boyutlari kaydediliyor
                 DuzlemBoyutlari duzlemBoyutlari = new DuzlemBoyutlari
@@ -27,7 +29,7 @@ namespace Mars_rover
                     X = int.Parse(input0.Split(' ')[0]),
                     Y = int.Parse(input0.Split(' ')[1]),
                 };
-                Arac Arac1 = new Arac
+                Arac arac1 = new Arac
                 {
                     Konum = new Konum
                     {
@@ -37,7 +39,7 @@ namespace Mars_rover
                     },
                     Name = "Rover-1"
                 };
-                Arac Arac2 = new Arac
+                Arac arac2 = new Arac
                 {
                     Konum = new Konum
                     {
@@ -49,17 +51,19 @@ namespace Mars_rover
                 };
                 #endregion
 
-                KomutaKontrol.AracEkle(Arac1);
-                KomutaKontrol.AracEkle(Arac2);
-                KomutaKontrol komutaKontrolArac1 = new KomutaKontrol(Arac1, duzlemBoyutlari);
-                KomutaKontrol komutaKontrolArac2 = new KomutaKontrol(Arac2, duzlemBoyutlari);
+                KomutaKontrol.AracEkle(arac1);
+                KomutaKontrol.AracEkle(arac2);
+                KomutaKontrol komutaKontrolArac1 = new KomutaKontrol(arac1, duzlemBoyutlari);
+                KomutaKontrol komutaKontrolArac2 = new KomutaKontrol(arac2, duzlemBoyutlari);
 
                 komutaKontrolArac1.KomutlariUygula(arac1Komut);
                 komutaKontrolArac2.KomutlariUygula(arac2Komut);
-                
+
+                #region output
                 Console.WriteLine("Output: ");
-                System.Console.WriteLine(Arac1.Konum.ToString());
-                System.Console.WriteLine(Arac2.Konum.ToString());
+                System.Console.WriteLine(arac1.Konum.ToString());
+                System.Console.WriteLine(arac2.Konum.ToString());
+                #endregion
             }
         }        
     }

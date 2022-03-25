@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using Test;
 using Xunit;
 using static Mars_rover.MarsRover;
 
@@ -120,8 +119,19 @@ namespace Mars_rover.Test
                 },
                 Name = "Rover-3"
             };
+            static Arac arac4 = new Arac
+            {
+                Konum = new Konum
+                {
+                    X = 1,
+                    Y = 1,
+                    Yon = "N"
+                },
+                Name = "Rover-4"
+            };
 
             static List<Arac> araclar = new List<Arac>() { arac1, arac2};
+            static List<Arac> araclar2 = new List<Arac>() { arac3, arac4};
         
 
 
@@ -149,15 +159,15 @@ namespace Mars_rover.Test
                     "5 1 E"
                 },
                 new object[] {
-                    araclar ,
-                    arac3
+                    araclar2 ,
+                    arac4
                     ,new DuzlemBoyutlari
                     {
                         X = 5,
                         Y = 5,
                     },
-                    "LMMMMMMMMMMMMMMM",
-                    "0 2 W"
+                    "M",
+                    "1 1 N"
                 }
         };
 
