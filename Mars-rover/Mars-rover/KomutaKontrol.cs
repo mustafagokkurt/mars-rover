@@ -13,6 +13,10 @@ namespace Mars_rover
         Arac komutaEdileceArac;
         DuzlemBoyutlari duzlemBoyutlari;
 
+        /// <summary>
+        /// Yuzeyde bulunan araclar kaydediliyor
+        /// </summary>
+        /// <param name="arac"></param>
         public static void AracEkle(Arac arac)
         {
             if (araclar == null)
@@ -46,6 +50,11 @@ namespace Mars_rover
             }
         }
 
+        /// <summary>
+        /// WNES, index numaralari 0123
+        /// formul = ((index-1) + 4) mod4         
+        /// </summary>
+        /// <param name="sagsol"></param>
         private void YonunuDegistir(string sagsol)
         {
             if (sagsol == "R")
