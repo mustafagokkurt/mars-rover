@@ -52,7 +52,8 @@ namespace Mars_rover
 
         /// <summary>
         /// WNES, index numaralari 0123
-        /// formul = ((index-1) + 4) mod4         
+        /// sol ise formul = MutlakDeger(((index - 1) + 4) mod4) bu yeni yonun indexini verir
+        /// sag ise formul = MutlakDeger(((index + 1) + 4) mod4) bu yeni yonun indexini verir
         /// </summary>
         /// <param name="sagsol"></param>
         private void YonunuDegistir(string sagsol)
